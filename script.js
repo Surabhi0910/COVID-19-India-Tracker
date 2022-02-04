@@ -1,10 +1,8 @@
-$.getJSON("https://covid-api.mmediagroup.fr/v1/cases?country=India
-", function(data){
+$.getJSON("https://covid-api.mmediagroup.fr/v1/cases?country=India", function(data){
     console.log(Object.keys(data).length);
     confirmCases=data.All.confirmed;
     recovered=data.All.recovered;
     deaths=data.All.deaths;
-   
     $('.confirmed-cases').append(confirmCases).css("color","blue");
     $('.recovered').append(recovered).css("color","green");
     $('.deaths').append(deaths).css("color","red");
@@ -15,6 +13,8 @@ $.getJSON("https://covid-api.mmediagroup.fr/v1/cases?country=India
         for(var state in data){
           if(state=="Unknown")
             continue;
+          
+          //$('.container').append('<div class="state'+(count)+' col-md"><h3>State name</h3><p class="regionConfirm">Confirm</p><p class="regionRecovered">Recovered</p><p class="regionDeath">Death</p></div>');
           $('.state'+count+' h3').text(state);
           $('.state'+count+' .regionConfirm').append(data[state].confirmed).css("color","blue");
           $('.state'+count+' .regionRecovered').append(data[state].recovered).css("color","green");
@@ -27,5 +27,4 @@ $.getJSON("https://covid-api.mmediagroup.fr/v1/cases?country=India
       });
       $('.state9 h3').text("Dadra, Nagar Haveli, Daman and Diu");
 });
-
 // https://covid-api.mmediagroup.fr/v1/cases
