@@ -1,11 +1,10 @@
-$.getJSON("https://api.rootnet.in/covid19-in/stats/latest", function(data){
+$.getJSON("https://covid-api.mmediagroup.fr/v1/cases?country=India
+", function(data){
     console.log(Object.keys(data).length);
-//     confirmCases=data.All.confirmed;
-//     recovered=data.All.recovered;
-//     deaths=data.All.deaths;
-     confirmCases=data.All.confirmed;
+    confirmCases=data.All.confirmed;
     recovered=data.All.recovered;
     deaths=data.All.deaths;
+   
     $('.confirmed-cases').append(confirmCases).css("color","blue");
     $('.recovered').append(recovered).css("color","green");
     $('.deaths').append(deaths).css("color","red");
@@ -29,5 +28,4 @@ $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", function(data){
       $('.state9 h3').text("Dadra, Nagar Haveli, Daman and Diu");
 });
 
-// https://covid-api.mmediagroup.fr/v1/cases?country=India
-
+// https://covid-api.mmediagroup.fr/v1/cases
