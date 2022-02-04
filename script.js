@@ -1,4 +1,4 @@
-$.getJSON("https://covid-api.mmediagroup.fr/v1/cases?country=India", function(data){
+$.getJSON("https://data.covid19india.org/v4/min/timeseries.min.json", function(data){
     console.log(Object.keys(data).length);
     confirmCases=data.All.confirmed;
     recovered=data.All.recovered;
@@ -25,4 +25,6 @@ $.getJSON("https://covid-api.mmediagroup.fr/v1/cases?country=India", function(da
       });
       $('.state9 h3').text("Dadra, Nagar Haveli, Daman and Diu");
 });
+
+// https://covid-api.mmediagroup.fr/v1/cases?country=India
 
