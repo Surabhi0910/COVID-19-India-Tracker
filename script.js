@@ -1,8 +1,11 @@
 $.getJSON("https://data.covid19india.org/v4/min/timeseries.min.json", function(data){
     console.log(Object.keys(data).length);
-    confirmCases=data.All.confirmed;
-    recovered=data.All.recovered;
-    deaths=data.All.deaths;
+//     confirmCases=data.All.confirmed;
+//     recovered=data.All.recovered;
+//     deaths=data.All.deaths;
+     confirmCases=data.AN.confirmed;
+    recovered=data.AN.recovered;
+    deaths=data.AN.deaths;
     $('.confirmed-cases').append(confirmCases).css("color","blue");
     $('.recovered').append(recovered).css("color","green");
     $('.deaths').append(deaths).css("color","red");
